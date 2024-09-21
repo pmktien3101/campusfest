@@ -39,5 +39,19 @@ một plugin giúp bạn định nghĩa alias (đường dẫn rút gọn) cho c
           "~": "./src"
         }
       }]
-    ]
+  ]}
+  + tạo jsconfig.json
+  + bỏ vô
+  + {
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"]
+    }
   }
+}
++ bỏ này vào file config-overrides.js
++ const { override , useBabelRc} = require("customize-cra");
+module.exports = override(useBabelRc());
+
+###### khi npm start thì nó sẽ vào package.json chạy r mốc qua config-overrides.js để nhận cấu hình thư viện webpack để ghi đè cái mà đc ẩn đi bởi create react app => override trong hàm trên là để trả lại cấu hình của webpack cái mà đc ẩn sau đó export ra ngoài đẻ chạy lên, overrride đc hổ trợ bởi customize-cra 
