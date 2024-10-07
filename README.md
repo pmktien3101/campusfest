@@ -54,4 +54,49 @@ một plugin giúp bạn định nghĩa alias (đường dẫn rút gọn) cho c
 + const { override , useBabelRc} = require("customize-cra");
 module.exports = override(useBabelRc());
 
-###### khi npm start thì nó sẽ vào package.json chạy r mốc qua config-overrides.js để nhận cấu hình thư viện webpack để ghi đè cái mà đc ẩn đi bởi create react app => override trong hàm trên là để trả lại cấu hình của webpack cái mà đc ẩn sau đó export ra ngoài đẻ chạy lên, overrride đc hổ trợ bởi customize-cra 
+##### khi npm start thì nó sẽ vào package.json chạy r mốc qua config-overrides.js để nhận cấu hình thư viện webpack để ghi đè cái mà đc ẩn đi bởi create react app => override trong hàm trên là để trả lại cấu hình của webpack cái mà đc ẩn sau đó export ra ngoài đẻ chạy lên, overrride đc hổ trợ bởi customize-cra 
+### Cài đặt và cấu hình Prettier trên VS Code
++ tạo file tên prettierrc và patse
++ {
+  "arrowParens": "always",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "embeddedLanguageFormatting": "auto",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxSingleQuote": false,
+  "printWidth": 120,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "all",
+  "useTabs": false,
+  "vueIndentScriptAndStyle": false
+}
++ tạo folder .vscode => tạo file settings.json rồi bỏ vào: 
++ {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+
+} 
+### Cấu hình sử dụng CSS, SASS
++ tạo folder globalStyles với code
++ improt file đó vào file index.js
++ root.render(
+  <React.StrictMode>
+    <GlobalStyles>
+      <App />
+    </GlobalStyles>
+  </React.StrictMode>,
+
+); 
++ sao đó install sass : npm i -D sass
++ reset css => tải thư viện : npm install --save normalize.css
+  => normalize.css là một tệp CSS phổ biến dùng để làm đồng nhất các kiểu mặc định của trình duyệt trên các trình duyệt khác nhau. Các trình duyệt như Chrome, Firefox, Safari, Edge, và Internet Explorer có các kiểu mặc định riêng cho các phần tử HTML (như margin, padding, font, và kích thước chữ). 
++ default css: trong file GloablStyes.scss
+### Cài đặt và cấu hình Router | Xây dựng cơ chế tải Layout 
++ cài đặt react-router-dom: npm i react-router-dom
++ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; => vào App.js
