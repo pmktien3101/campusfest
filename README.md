@@ -100,3 +100,6 @@ module.exports = override(useBabelRc());
 ### Cài đặt và cấu hình Router | Xây dựng cơ chế tải Layout 
 + cài đặt react-router-dom: npm i react-router-dom
 + import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; => vào App.js
+### Cài 1 số thư viện
++ Tippy
++ Axios
