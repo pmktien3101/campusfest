@@ -103,3 +103,4 @@ module.exports = override(useBabelRc());
 ### Cài 1 số thư viện
 + Tippy
 + Axios
++ Prop-types nếu cài đặt create react-app thì ko cần cài thư viện này nó đã đc cài sẵn 
